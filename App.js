@@ -20,7 +20,7 @@ const Input = styled.TextInput`
   border-radius:10px;
   padding:10px;
 `;
-
+git branch -M main
 const CalcButton = styled.Button`
   margin-top:10px;
 `;
@@ -37,7 +37,7 @@ export default()=> {
         value={bill}
         onChangeText={n=>setBill(n)}
         />
-        <CalcButton title="Calcular"/>
+        <CalcButton title="Calcular" onPress={calc}/>
     </Page>
   );
 }
