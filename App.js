@@ -20,6 +20,10 @@ const Input = styled.TextInput`
   border-radius:10px;
   padding:10px;
 `;
+
+const CalcButton = styled.Button`
+  margin-top:10px;
+`;
 //arrow function
 export default()=> {
   const [bill, setBill] = useState(''); //iniciar com uma string vazia
@@ -33,6 +37,7 @@ export default()=> {
         value={bill}
         onChangeText={n=>setBill(n)}
         />
+        <CalcButton title="Calcular"/>
     </Page>
   );
 }
