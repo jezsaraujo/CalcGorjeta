@@ -22,13 +22,16 @@ const Input = styled.TextInput`
 `;
 //arrow function
 export default()=> {
+  const [bill, setBill] = useState(''); //iniciar com uma string vazia
   return(
     <Page>
         <HeaderText>Calculadora de Gorjeta</HeaderText>
         <Input 
-        placeholder= "Quanto deu a conta?"
+        placeholder= "Quanto deu a conta?" 
         placeholderTextColor="#000"
-        keyboardType="numeric"
+        keyboardType="numeric" //teclado numerico
+        value={bill}
+        onChangeText={n=>setBill(n)}
         />
     </Page>
   );
