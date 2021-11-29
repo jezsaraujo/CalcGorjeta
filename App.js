@@ -20,7 +20,7 @@ const Input = styled.TextInput`
   border-radius:10px;
   padding:10px;
 `;
-git branch -M main
+
 const CalcButton = styled.Button`
   margin-top:10px;
 `;
@@ -28,9 +28,15 @@ const CalcButton = styled.Button`
 export default()=> {
   const [bill, setBill] = useState(''); //iniciar com uma string vazia
   const [tip, setTip] = useState(0);
-  
+
   const calc = ()=>{
     let nBill = parseFloat(bill); //convertendo string pra float
+
+    if(nBill){ // se verdadeiro -> se =1 ou >0
+      setTip((10/100) * nBill); //pega o valor de nBill e calc 10% e depois atualiza esse valor em setTip
+    }else{
+      alert("Digite o valor da conta")
+    }
   }
 
   return(
