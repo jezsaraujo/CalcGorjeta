@@ -27,10 +27,12 @@ const CalcButton = styled.Button`
 //arrow function
 export default()=> {
   const [bill, setBill] = useState(''); //iniciar com uma string vazia
+  const [tip, setTip] = useState(0);
   
   const calc = ()=>{
-    let nBill = parseFloat(bill);
+    let nBill = parseFloat(bill); //convertendo string pra float
   }
+
   return(
     <Page>
         <HeaderText>Calculadora de Gorjeta</HeaderText>
