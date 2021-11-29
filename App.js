@@ -54,7 +54,7 @@ export default () => {
    const [bill2, setBill2] = useState('');//state que vai conter o valor
    const [tip, setTip] = useState(0);// se iniciar com 0 será uma variavel numerica
    const [pct, setPct] = useState(10); //gorjeta padrão
-   const[resultado, setResult] = useState(0);
+   const[tip2, setTip2] = useState(0);
 
 
    const calc = () => {
@@ -66,14 +66,21 @@ export default () => {
       setBill2(bill);
    }
 
+   const perc = () => {
+      let nPerc = parseFloat(bill);
+
+      if(nPerc){
+         setTip2((pct/100) * nPerc);
+      }
+
+   }
+
+
    useEffect(()=>{
-     calc();
+     perc();
    }, [pct]);
 
-   const result = () =>{
-      let resultado = calc();
-       = {(parseFloat(bill) + tip).toFixed(2)};
-   })
+   
 
    return (
       <Page>
@@ -101,13 +108,13 @@ export default () => {
                <ResultItem>R$ {parseFloat(bill).toFixed(2)}</ResultItem>
 
                <ResultItemTitle>Valor da Gorjeta</ResultItemTitle>
-               <ResultItem>R$ {tip.toFixed(2)} ({pct}%)</ResultItem>
-</ResultArea>
-}
+               <ResultItem>R$ {tip2.toFixed(2)} ({pct}%)</ResultItem>
+
         
                <ResultItemTitle> Valor Total</ResultItemTitle>
-               <ResultItem> R$ {(parseFloat(bill) + tip).toFixed(2)}</ResultItem>
-            
+               <ResultItem> R$ {(parseFloat(bill2) + tip).toFixed(2)}</ResultItem>
+</ResultArea>
+}            
          
       </Page>
 
